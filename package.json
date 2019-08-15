@@ -1,0 +1,26 @@
+{
+  "name": "writer-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha 'ethereum/test/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxyyxyyxxyyx/writer-kata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xxyyxyyxxyyx/writer-kata/issues"
+  },
+  "homepage": "https://github.com/xxyyxyyxxyyx/writer-kata#readme",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "ganache-cli": "^6.6.0",
+    "mocha": "^6.2.0",
+    "solc": "^0.5.11",
+    "web3": "^1.2.1"
+  }
+}
