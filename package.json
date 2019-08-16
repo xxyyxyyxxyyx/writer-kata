@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'ethereum/test/*.js'"
+    "test": "mocha 'ethereum/test/*.js'",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,9 @@
     "fs-extra": "^8.1.0",
     "ganache-cli": "^6.6.0",
     "mocha": "^6.2.0",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "solc": "^0.5.11",
     "web3": "^1.2.1"
   }
