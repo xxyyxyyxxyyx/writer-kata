@@ -9,10 +9,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "ap-southeast-1"
-  app: "writer-kata"
-  env: "WriterKata-env-3"
+  app: "test"
+  env: "Test-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-389073233594"
-  bucket_path: "writer-kata"
+  bucket_path: "test"
   on:
     branch: master
   access_key_id:
