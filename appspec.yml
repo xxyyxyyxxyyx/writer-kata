@@ -6,4 +6,5 @@ files:
 hooks:
   AfterInstall:
     - location: ./docker-start.sh
+      timeout: 600
       runas: root
