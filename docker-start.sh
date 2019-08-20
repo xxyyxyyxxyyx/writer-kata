@@ -1,4 +1,3 @@
 #!/bin/bash
-npm install
-npm run build
-npm start
+
+docker build -t writer-kata .
