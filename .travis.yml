@@ -6,16 +6,16 @@ script:
   - npm test
   - npm run build
 
-deploy:
-  provider: elasticbeanstalk
-  region: "ap-southeast-1"
-  app: "writer-kata"
-  env: "WriterKata-env-1"
-  bucket_name: "elasticbeanstalk-ap-southeast-1-389073233594"
-  bucket_path: "writer-kata"
-  on:
-    branch: master
-  access_key_id:
-    secure: $AWS_ACCESS_KEY
-  secret-access-key:
-    secure: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: "ap-southeast-1"
+#   app: "writer-kata"
+#   env: "WriterKata-env-1"
+#   bucket_name: "elasticbeanstalk-ap-southeast-1-389073233594"
+#   bucket_path: "writer-kata"
+#   on:
+#     branch: master
+#   access_key_id:
+#     secure: $AWS_ACCESS_KEY
+#   secret-access-key:
+#     secure: $AWS_SECRET_KEY
