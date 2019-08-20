@@ -4,6 +4,9 @@ files:
   - source: /
     destination: /tmp
 hooks:
+  BeforeInstall:
+    - location: ./beforeInstall.sh
+      runas: root
   AfterInstall:
     - location: ./docker-start.sh
       timeout: 180
