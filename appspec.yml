@@ -3,3 +3,7 @@ os: linux
 files:
   - source: /
     destination: /tmp
+hooks:
+  AfterInstall:
+    - location: ./docker-start.sh
+      runas: root
