@@ -9,14 +9,10 @@ export default class StoryShow extends Component {
     isLoading: false
   };
   static async getInitialProps(props) {
-    console.log("Hello");
-    const accounts = await web3.getAccounts();
-    console.log(accounts);
     const address = props.query.address;
     const story = Story(address);
     const title = await story.methods.title().call();
     const paragraphCount = await story.methods.paragraphCount().call();
-    // const hasJoined = await story.methods.contributors(accounts[0]).call();
     return {
       address,
       title,
