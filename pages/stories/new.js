@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Layout from "../../components/Layout";
-import { Button, Message, Form } from "semantic-ui-react";
+import { Button, Message, Form, Label } from "semantic-ui-react";
 import storyFactory from "../../ethereum/factory";
 import web3 from "../../ethereum/web3";
+import { Link, Router } from "../../routes";
 
 export default class StoryNew extends Component {
   state = {
@@ -35,6 +36,7 @@ export default class StoryNew extends Component {
         .send({
           from: accounts[0]
         });
+      Router.pushRoute("/");
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }
@@ -49,7 +51,12 @@ export default class StoryNew extends Component {
     return (
       <Layout>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-          <h3>Start a new story</h3>
+          <div style={{ margin: "20px 0px" }}>
+            <Label color="teal" tag>
+              Start a new story...
+            </Label>
+          </div>
+
           <Form.Field>
             <label>Title</label>
             <input
@@ -71,7 +78,7 @@ export default class StoryNew extends Component {
             header="There was some errors with your submission"
             content={this.state.errorMessage}
           />
-          <Button primary loading={this.state.isLoading}>
+          <Button color="teal" loading={this.state.isLoading}>
             Create
           </Button>
         </Form>

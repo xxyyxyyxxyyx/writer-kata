@@ -1,14 +1,25 @@
 import React from "react";
+import { Link } from "../routes";
 
 import { Dropdown, Icon, Menu, Segment } from "semantic-ui-react";
 
 export default () => {
   return (
     <Menu style={{ marginTop: "10px" }}>
-      <Menu.Item>WriterKatas</Menu.Item>
+      <Link route="/">
+        <Menu.Item color="teal">
+          <img src="/static/typewriter.png" />
+        </Menu.Item>
+      </Link>
+
       <Menu.Menu position="right">
-        <Menu.Item>Create New Story</Menu.Item>
-        <Menu.Item>+</Menu.Item>
+        <Link route="/stories/new">
+          <Menu.Item color="green">Create New Story</Menu.Item>
+        </Link>
+
+        <Link route="/stories/new">
+          <Menu.Item color="teal">+</Menu.Item>
+        </Link>
       </Menu.Menu>
     </Menu>
   );

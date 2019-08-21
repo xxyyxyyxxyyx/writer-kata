@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Layout from "../components/Layout";
 import storyFactory from "../ethereum/factory";
-import { Card, Icon, Image, Grid } from "semantic-ui-react";
+import { Card, Icon, Image, Grid, Label, Menu } from "semantic-ui-react";
 import Story from "../ethereum/story";
+import { Link } from "../routes";
 
 class Index extends Component {
   static async getInitialProps() {
@@ -12,6 +13,7 @@ class Index extends Component {
         const story = Story(address);
         const summary = await story.methods.getSummary().call();
         return {
+          address: address,
           title: summary[0],
           description: summary[1],
           contributors: summary[2],
@@ -33,8 +35,9 @@ class Index extends Component {
               size="mini"
               src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
             />
+
             <Card.Header className="left floated" style={{ marginTop: "10px" }}>
-              {story.title}
+              <Link route={`/stories/${story.address}`}>{story.title}</Link>
             </Card.Header>
             <Card.Meta
               content={story.creator}
@@ -44,18 +47,20 @@ class Index extends Component {
           </Card.Content>
           <Card.Content description={story.description} />
           <Card.Content extra>
-            <Grid divided="vertically">
-              <Grid.Row columns={2}>
-                <Grid.Column>
-                  <Icon name="user" />
-                  {story.contributors} Contributors
-                </Grid.Column>
-                <Grid.Column>
-                  <Icon name="book" />
-                  {story.paragraphs} Paragraphs
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
+            <Menu compact floated="right">
+              <Menu.Item>
+                <Icon name="user" /> Contributors
+                <Label color="red" floating>
+                  {story.contributors}
+                </Label>
+              </Menu.Item>
+              <Menu.Item>
+                <Icon name="book" /> Paragraphs
+                <Label color="teal" floating>
+                  {story.paragraphs}
+                </Label>
+              </Menu.Item>
+            </Menu>
           </Card.Content>
         </Card>
       );
@@ -66,7 +71,11 @@ class Index extends Component {
   render() {
     return (
       <Layout>
-        <h3>Stories...</h3>
+        <div style={{ margin: "20px 0px" }}>
+          <Label color="teal" tag size="big">
+            All Stories...
+          </Label>
+        </div>
         {this.renderStories()}
       </Layout>
     );
