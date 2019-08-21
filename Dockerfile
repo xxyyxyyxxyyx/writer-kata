@@ -1,11 +1,8 @@
-FROM node:alpine AS builder
+FROM node
 WORKDIR /app
 COPY package.json .
-RUN apk add --no-cache git python g++ make
 RUN npm install
 COPY . .
 RUN npm run build
+EXPOSE 3000
 RUN npm start
-
-FROM nginx
-EXPOSE 80
