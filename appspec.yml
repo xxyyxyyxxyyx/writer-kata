@@ -8,5 +8,5 @@ hooks:
     - location: ./beforeInstall.sh
       runas: root
   AfterInstall:
-    - location: ./docker-start.sh
+    - location: ./afterInstall.sh
       runas: root

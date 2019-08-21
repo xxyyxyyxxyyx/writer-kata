@@ -26,7 +26,6 @@ const input = {
 const output = JSON.parse(solc.compile(JSON.stringify(input))).contracts[
   "Story.sol"
 ];
-
 fs.ensureDirSync(buildPath);
 
 Object.keys(output).forEach(contract => {

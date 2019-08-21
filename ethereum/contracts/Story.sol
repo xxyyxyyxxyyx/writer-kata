@@ -19,10 +19,12 @@ contract Story{
     }
     address public creator;
     mapping(address => bool) public contributors;
+    uint public contributorCount;
     string public title;
     string public description;
     Paragraph[] public paragraphs;
     uint public paragraphIndex;
+    uint public paragraphCount;
 
     modifier hasJoined(){
         require(contributors[msg.sender] == true,"The user is not a contributor");
@@ -37,6 +39,7 @@ contract Story{
 
     function join() public {
         contributors[msg.sender] = true;
+        contributorCount++;
     }
     
     function createParagraph(string memory content) public hasJoined {
@@ -45,6 +48,17 @@ contract Story{
             content: content
         });
         paragraphs.push(newParagraph);
+        paragraphCount++;
+    }
+
+    function getSummary() public view returns(string memory, string memory, uint,uint,address){
+        return(
+            title,
+            description,
+            contributorCount,
+            paragraphCount,
+            creator
+        );
     }
     
 }
