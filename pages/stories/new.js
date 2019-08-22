@@ -72,6 +72,7 @@ export default class StoryNew extends Component {
             value={this.state.description}
             name="description"
             onChange={this.onInput}
+            rows="6"
           />
           <Message
             error

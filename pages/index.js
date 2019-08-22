@@ -33,7 +33,7 @@ class Index extends Component {
             <Image
               floated="right"
               size="mini"
-              src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+              src={`https://robohash.org/${index}?set=set3&size=180x180`}
             />
 
             <Card.Header className="left floated" style={{ marginTop: "10px" }}>

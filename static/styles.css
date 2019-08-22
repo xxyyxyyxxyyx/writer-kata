@@ -1,3 +1,6 @@
 * {
-  font-family: "Special Elite", cursive;
+  font-family: "Special Elite", cursive !important;
+}
+.ui.container {
+  max-width: 900px !important;
 }

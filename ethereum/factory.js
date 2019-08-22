@@ -3,7 +3,7 @@ import StoryFactory from "./build/StoryFactory.json";
 
 const instance = new web3.Contract(
   StoryFactory.abi,
-  "0x5bA1619Cd2f47BD0c7E0df9588bFf68fE23E0Ffd"
+  "0x07FC5fa706AB209E8A0D33F5d0b4155b26597559"
 );
 
 export default instance;

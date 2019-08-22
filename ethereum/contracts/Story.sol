@@ -16,6 +16,7 @@ contract Story{
     struct Paragraph{
         uint index;
         string content;
+        address writerAddress;
     }
     address public creator;
     mapping(address => bool) public contributors;
@@ -45,7 +46,8 @@ contract Story{
     function createParagraph(string memory content) public hasJoined {
         Paragraph memory newParagraph = Paragraph({
             index: paragraphIndex++,
-            content: content
+            content: content,
+            writerAddress: msg.sender
         });
         paragraphs.push(newParagraph);
         paragraphCount++;

@@ -11,14 +11,21 @@ export default () => {
           <img src="/static/typewriter.png" />
         </Menu.Item>
       </Link>
+      <Link route="/">
+        <h2 style={{ marginLeft: "10px", cursor: "pointer" }}>Writer Kata</h2>
+      </Link>
 
       <Menu.Menu position="right">
         <Link route="/stories/new">
-          <Menu.Item color="green">Create New Story</Menu.Item>
+          <Menu.Item color="green">
+            <h4>Create New Story</h4>
+          </Menu.Item>
         </Link>
 
         <Link route="/stories/new">
-          <Menu.Item color="teal">+</Menu.Item>
+          <Menu.Item color="teal">
+            <h4>+</h4>
+          </Menu.Item>
         </Link>
       </Menu.Menu>
     </Menu>
